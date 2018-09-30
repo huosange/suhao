@@ -17,7 +17,8 @@ public class UploadServlet extends HttpServlet {
 	protected void service(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		req.setCharacterEncoding("utf-8");
-		Part part=req.getPart("aFile");
+		resp.setContentType("text/html;charset=utf-8");
+		Part part=req.getPart("file");
 		String str=part.getHeader("Content-Disposition");
 		
 		String[] ss=str.split(";");
